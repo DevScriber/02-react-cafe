@@ -4,7 +4,7 @@ import VoteOptions from "../VoteOptions/VoteOptions";
 import VoteStats from "../VoteStats/VoteStats";
 import Notification from '../Notification/Notification';
 import { useState } from 'react';
-import type Votes from '../../types/votes'
+import type { Votes, VoteType } from '../../types/votes'
 
 export default function App() {
 
@@ -15,7 +15,7 @@ export default function App() {
   });
 
 
-  const handleVote = (type: keyof Votes) => {
+  const handleVote = (type: VoteType) => {
     setVotes(votes => ({
       ...votes,
       [type]: votes[type] + 1
